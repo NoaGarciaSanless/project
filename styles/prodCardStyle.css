@@ -1,0 +1,60 @@
+.container {
+  background-color: white;
+  flex: 1;
+
+  margin: 10px;
+  padding: 15px;
+  border: 2px solid black;
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  /*Centers the content*/
+  justify-content: space-between;
+  align-items: start;
+
+  min-width: 500px;
+  max-width: 500px;
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: row;
+
+  /*Centers the content*/
+  justify-content: center;
+  align-items: center;
+
+  gap: 20px;
+}
+
+#description {
+  border: 2px outset black;
+  border-radius: 5px;
+  margin: 50px;
+  padding: 30px;
+}
+
+form {
+  width: 100%;
+
+  /*Centers the content*/
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#bToProduct {
+  background-color: #98d9fc;
+  border: 1px solid black;
+  border-radius: 10px;
+
+  font-size: large;
+  padding: 20px;
+}
+
+#bToProduct:hover {
+  background-color: #77a9c4;
+}

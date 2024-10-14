@@ -1,0 +1,31 @@
+.footer {
+  background-color: #95d0b8;
+  margin-top: 10px;
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+
+  /*Centers the content*/
+  justify-content: center;
+  align-items: center;
+}
+
+.socialMedia {
+  display: flex;
+  flex-direction: row;
+
+  /*Centers the content*/
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.mediaLink {
+  /*Centers the content*/
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}

@@ -1,0 +1,249 @@
+body {
+  height: 100%;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  /*Makes the content fit the screen width*/
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+
+  /*Centers the content*/
+  justify-content: space-between;
+  align-items: center;
+}
+
+header {
+  background-color: #0ccaba;
+  margin-bottom: 10px;
+  padding: 20px;
+
+  display: flex;
+  /*Centers the content*/
+  justify-content: space-between;
+  align-items: center;
+
+  width: 98.7%;
+}
+
+.simpleData {
+  padding: 10px;
+
+  display: flex;
+  flex-direction: row;
+
+  /*Centers the content*/
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+
+  width: 20%;
+}
+.userIcon {
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+
+  /*Centers the content*/
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+
+  width: 50%;
+}
+
+.navProfile {
+  /*Aligns the content*/
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
+
+  margin-right: 40px;
+}
+
+/*Style of each line of options (buttons and user name)*/
+.optionContainer {
+  /*Centers the content*/
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.optionContainer img {
+  width: 50px;
+  height: 50px;
+}
+
+/*Style of the buttons*/
+.optionContainer button {
+  border: 2px solid black;
+  border-radius: 20px;
+
+  padding: 20px;
+
+  font-size: medium;
+}
+
+#bHome {
+  background-color: #98d9fc;
+}
+
+#bHome:hover {
+  background-color: #77a9c4;
+}
+
+#bCloSess {
+  background-color: #fa9b9f;
+}
+
+#bCloSess:hover {
+  background-color: #bb7174;
+}
+
+.content {
+  flex-grow: 1;
+
+  /*Centers the content*/
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: start;
+  gap: 10px;
+
+  min-height: 550px;
+  max-height: 650px;
+}
+
+.nonEditableData {
+  border: 1px solid black;
+  border-radius: 20px;
+
+  margin: 20px;
+  padding: 40px;
+
+  font-size: larger;
+
+  min-width: 500px;
+  min-width: 600px;
+
+  /*Centers the content*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 10px;
+}
+
+.dataField {
+  width: 100%;
+
+  /*Centers the content*/
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+  gap: 10px;
+}
+
+.dataName {
+  font-weight: bold;
+
+  flex: 1;
+}
+
+.data {
+  border-bottom: 1px solid black;
+
+  flex: 2;
+}
+
+.editForm {
+  border: 1px solid black;
+  border-radius: 20px;
+
+  margin: 20px;
+  padding: 40px;
+
+  font-size: larger;
+
+  min-width: 500px;
+  min-width: 600px;
+
+  /*Centers the content*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 20px;
+}
+
+.editForm input {
+  width: 100%;
+  flex: 1;
+}
+
+.btnOptions {
+  width: 100%;
+
+  /*Centers the content*/
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.btnOptions button {
+  font-size: 20px;
+  padding: 15px;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+#bCancel {
+  background-color: #fa9b9f;
+}
+
+#bCancel:hover {
+  background-color: #bb7174;
+}
+
+#bConfirm {
+  background-color: #a5f3be;
+}
+
+#bConfirm:hover {
+  background-color: #91d6a7;
+}
+
+#bEdit {
+  max-width: 300px;
+  background-color: #ffeaa0;
+
+  border: 1px solid black;
+  border-radius: 20px;
+
+  font-size: larger;
+  padding: 20px;
+}
+#bEdit:hover {
+  background-color: #dbc988;
+}
+
+footer {
+  background-color: #95d0b8;
+  padding: 20px;
+  margin-top: 10px;
+
+  width: 100%;
+}

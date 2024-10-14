@@ -1,0 +1,50 @@
+body {
+  display: flex;
+  flex-direction: column;
+
+  /*Centers the content*/
+  justify-content: center;
+  align-items: center;
+}
+
+.err {
+  color: red;
+}
+
+form {
+  border: 1px solid black;
+  border-radius: 10%;
+
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+
+  /*Centers the content*/
+  justify-content: center;
+  align-items: center;
+}
+
+.field {
+  display: flex;
+  flex-direction: row;
+
+  /*Centers the content*/
+  justify-content: center;
+  align-items: center;
+
+  flex: 1;
+}
+
+footer {
+  display: flex;
+
+  /*Centers the content*/
+  justify-content: center;
+  align-items: center;
+
+  /*Puts the footer right before the end of the page*/
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+}
