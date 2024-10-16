@@ -1,12 +1,6 @@
 <?php
 //List with the accepted users
-$user_list = [
-    1 => ["name" => "Pepe", "password" => "123passPepe"],
-    2 => ["name" => "Maria", "password" => "MariaLoginPass"],
-    3 => ["name" => "Marco", "password" => "321Marco"],
-    4 => ["name" => "Alba", "password" => "Alba_Pass123"],
-    5 => ["name" => "Admin", "password" => "AdminPassABC123."]
-];
+include("./assets/dataFolder/data.php");
 
 session_start();
 if (!isset($_SESSION['user'])) {
@@ -51,7 +45,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
     <header>
-        <h1>Home</h1>
+        <div class="logo">
+            <img src="./assets/img/logoPhp.png" alt="Web page logo">
+            <h1>Home</h1>
+        </div>
+
         <div class="navProfile">
             <div class="optionContainer">
                 <h3><?php echo $_SESSION["user"] ?></h3>

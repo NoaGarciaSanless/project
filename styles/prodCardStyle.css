@@ -30,7 +30,7 @@
 }
 
 #description {
-  border: 2px outset black;
+  border: 2px solid rgb(189, 189, 189);
   border-radius: 5px;
   margin: 50px;
   padding: 30px;

@@ -99,11 +99,11 @@ header {
   font-size: medium;
 }
 
-#bProfile {
+#bHome {
   background-color: #98d9fc;
 }
 
-#bProfile:hover {
+#bHome:hover {
   background-color: #77a9c4;
 }
 

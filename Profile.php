@@ -1,12 +1,7 @@
 <?php
-//List with the accepted users
-$user_list = [
-    1 => ["name" => "Pepe", "password" => "123passPepe"],
-    2 => ["name" => "Maria", "password" => "MariaLoginPass"],
-    3 => ["name" => "Marco", "password" => "321Marco"],
-    4 => ["name" => "Alba", "password" => "Alba_Pass123"],
-    5 => ["name" => "Admin", "password" => "AdminPassABC123."]
-];
+include("./assets/dataFolder/data.php");
+
+
 //Boolean that controls if the edit form is showing
 $showForm = false;
 
@@ -19,10 +14,60 @@ function test_input($data)
     return $data;
 }
 
+// Sets the form and the session data with the data stored in the array 
+function startData($userName, &$list)
+{
+    // Searches for the user to later load the data
+    $keyUser = array_search($userName, array_column($list, 'name'));
+
+    // If no user was foud to modify shows a error message
+    if ($keyUser === false) {
+        $errUserMod = true;
+        return;
+    }
+
+    $_SESSION["user"] = $list[$keyUser]['name'];
+    $_SESSION["email"] = $list[$keyUser]['email'];
+    $_SESSION["adress"] = $list[$keyUser]['adress'];
+    $_SESSION["phone"] = $list[$keyUser]['phone'];
+}
+
+// Updates the data in the array
+function updateData($userToMod, &$list)
+{
+    // Searches for the user that is going to be modified
+    $keyUser = array_search($userToMod, array_column($list, 'name'));
+
+    // If no user was foud to modify shows a error message
+    if ($keyUser === false) {
+        $errUserMod = true;
+        return;
+    }
+
+    //Variable for the new data
+    $email = $_SESSION["email"];
+    $adress = $_SESSION["adress"];
+    $phone = $_SESSION["phone"];
+
+    $list[$keyUser] = [
+        'name' => $_SESSION["user"],
+        'password' => $list[$keyUser]["password"],
+        'email' => $email,
+        'adress' => $adress,
+        'phone' => $phone,
+
+    ];
+
+    // Saves the new data in data.php
+    file_put_contents('./assets/dataFolder/data.php', "<?php\n\n\$user_list = " . var_export($list, true) . ";\n");
+}
+
 session_start();
 if (!isset($_SESSION['user'])) {
     header("Location: Login.php?redirected=true");
 }
+
+startData($_SESSION["user"], $user_list);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST["close"])) {
@@ -35,11 +80,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } elseif (isset($_POST["cancel"])) {
         $showForm = false;
     } elseif (isset($_POST["confirm"])) {
-        $_SESSION["user"] = test_input($_POST["name"]);
-        $_SESSION["email"] = test_input($_POST["email"]);
-        $_SESSION["adress"] = test_input($_POST["adress"]);
-        $_SESSION["phone"] = test_input($_POST["phone"]);
-        $showForm = false;
+        // The original name of the user
+        $actualUser = $_SESSION["user"];
+
+        if (!empty($_POST["name"])) {
+            $_SESSION["user"] = test_input($_POST["name"]);
+            $_SESSION["email"] = test_input($_POST["email"]);
+            $_SESSION["adress"] = test_input($_POST["adress"]);
+            $_SESSION["phone"] = test_input($_POST["phone"]);
+            $showForm = false;
+        } else {
+            $errEmptyUser = true;
+        }
+
+
+
+        updateData($actualUser, $user_list);
     }
 }
 
@@ -51,7 +107,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home page</title>
+    <title>Profile page</title>
     <link rel="stylesheet" href="./styles/profileStyle.css">
 
 </head>
@@ -77,6 +133,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </div>
     </header>
+
+    <?php
+    if (isset($errUserMod)) {
+        echo '<span class="error">Error while trying to find user</span>';
+    }
+    ?>
+
+    <?php if (isset($errEmptyUser) && $errEmptyUser): ?>
+        <span class="error">To change the data you need to specify a user name </span>
+    <?php endif; ?>
 
     <div class="content">
         <div class="nonEditableData">

@@ -30,6 +30,12 @@ header {
   width: 98.7%;
 }
 
+.error {
+  color: red;
+  font-size: larger;
+  margin: 10px;
+}
+
 .simpleData {
   padding: 10px;
 

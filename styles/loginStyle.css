@@ -2,6 +2,13 @@ body {
   display: flex;
   flex-direction: column;
 
+  /*Makes the content fit the screen width*/
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+
   /*Centers the content*/
   justify-content: center;
   align-items: center;
@@ -9,6 +16,18 @@ body {
 
 .err {
   color: red;
+}
+
+header {
+  background-color: #0ccaba;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  /*Centers the content*/
+  justify-content: center;
+  align-items: center;
 }
 
 form {
@@ -37,6 +56,8 @@ form {
 }
 
 footer {
+  background-color: #95d0b8;
+
   display: flex;
 
   /*Centers the content*/
@@ -46,5 +67,5 @@ footer {
   /*Puts the footer right before the end of the page*/
   position: absolute;
   bottom: 10px;
-  width: 100%;
+  width: 99.9%;
 }
