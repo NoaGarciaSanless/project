@@ -1,3 +1,5 @@
+@import url("../assets/fonts/fonts.css");
+
 body {
   display: flex;
   flex-direction: column;
@@ -12,6 +14,9 @@ body {
   /*Centers the content*/
   justify-content: center;
   align-items: center;
+
+
+  font-family: "Poppins";
 }
 
 .err {
@@ -28,13 +33,25 @@ header {
   /*Centers the content*/
   justify-content: center;
   align-items: center;
+
+
+   /* Updated background */
+   background-image: 
+   linear-gradient(135deg, rgba(43, 110, 210, 0.15) 25%, transparent 25%), 
+   linear-gradient(225deg, rgba(43, 111, 210, 0.15) 25%, transparent 25%), 
+   linear-gradient(45deg, rgba(43, 110, 210, 0.15) 25%, transparent 25%), 
+   linear-gradient(315deg, rgba(43, 111, 210, 0.15) 25%, rgba(246, 242, 255, 0.15) 25%);
+ background-size: 91px 91px;
+ background-position: 45.5px 0px, 45.5px 0px, 0px 0px, 0px 0px;
+ background-repeat: repeat;
 }
 
 form {
   border: 1px solid black;
   border-radius: 10%;
 
-  padding: 10px;
+  padding: 30px;
+  margin: 10px;
 
   display: flex;
   flex-direction: column;
@@ -42,17 +59,38 @@ form {
   /*Centers the content*/
   justify-content: center;
   align-items: center;
+  gap: 10px;
 }
 
 .field {
+  font-size: large;
+  padding-left: 30px;
+  padding-right: 30px;
+
   display: flex;
   flex-direction: row;
 
   /*Centers the content*/
-  justify-content: center;
+  justify-content: start;
   align-items: center;
+  gap: 10px;
 
   flex: 1;
+}
+
+#bLogin{
+  font-size: large;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  background-color: #98d9fc;
+  border-radius: 20px;
+}
+
+#bLogin:hover{
+  background-color:#77a9c4;
 }
 
 footer {

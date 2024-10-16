@@ -50,13 +50,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <h3><?php echo $_SESSION["user"] ?></h3>
                 <img src="./assets/icons/user.png" alt="User icon">
             </div>
-            <div class="optionContainer">
-                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
+                <form class="optionContainer" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
                     <button name="close" id="bCloSess">Close Session</button>
                     <button name="home" id="bHome">Home</button>
                 </form>
 
-            </div>
         </div>
     </header>
 
@@ -66,7 +64,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         ?>
     </div>
 
+    <form class="searchBar">
+        <div class="var">
+            <span>Search by name: </span>
+            <input type="text" name="varName" id="varName" placeholder="Product name">
+        </div>
+        <div class="var">
+            <span>Category: </span>
+            <select name="category" id="varCat">
+                <option value="choose">Choose</option>
+            </select>
+        </div>
 
+        <div class="var">
+            <input type="button" id="bClear" value="Clear filters">
+        </div>
+    </form>
+
+    <div class="content">
+    <?php
+        include("./assets/reusable/productCard.php");
+        include("./assets/reusable/productCard.php");
+        include("./assets/reusable/productCard.php");
+        include("./assets/reusable/productCard.php");
+        include("./assets/reusable/productCard.php");
+        include("./assets/reusable/productCard.php");
+        ?>
+    </div>
 
 
     <footer>

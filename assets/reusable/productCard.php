@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <div class="cardHeader">
-            <img src="https://via.placeholder.com/200" alt="Product image">
+            <img src="./assets/img/placeholder.png" alt="Product image">
             <div class="namePrice">
                 <h2>Product name</h2>
                 <h4>9999.99€</h4>

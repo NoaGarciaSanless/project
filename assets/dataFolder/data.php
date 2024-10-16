@@ -3,10 +3,10 @@
 $user_list = array (
   0 => 
   array (
-    'name' => 'Pepe2',
+    'name' => 'Paquito',
     'password' => '123passPepe',
     'email' => 'uncorreo@correo.com',
-    'adress' => 'Rua Galicia',
+    'adress' => '',
     'phone' => '',
   ),
   1 => 

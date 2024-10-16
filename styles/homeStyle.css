@@ -1,3 +1,5 @@
+@import url("../assets/fonts/fonts.css");
+
 body {
   display: flex;
   flex-direction: column;
@@ -15,6 +17,9 @@ body {
   align-items: center;
 
   position: relative;
+
+
+  font-family: "Poppins";
 }
 
 /*Element used to put the backgroud*/
@@ -45,6 +50,16 @@ header {
 
   height: 30%;
   width: 98.7%;
+
+  /* Updated background */
+  background-image: 
+    linear-gradient(135deg, rgba(43, 110, 210, 0.15) 25%, transparent 25%), 
+    linear-gradient(225deg, rgba(43, 111, 210, 0.15) 25%, transparent 25%), 
+    linear-gradient(45deg, rgba(43, 110, 210, 0.15) 25%, transparent 25%), 
+    linear-gradient(315deg, rgba(43, 111, 210, 0.15) 25%, rgba(246, 242, 255, 0.15) 25%);
+  background-size: 91px 91px;
+  background-position: 45.5px 0px, 45.5px 0px, 0px 0px, 0px 0px;
+  background-repeat: repeat;
 }
 
 .logo {

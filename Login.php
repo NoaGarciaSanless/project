@@ -85,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
         <div class="field">
             User name:
-            <input type="text" name="name" value=" <?php echo isset($_COOKIE["userName"]) ? htmlspecialchars($_COOKIE["userName"]) : ''; ?>">
+            <input type="text" name="name" value="<?php echo isset($_COOKIE["userName"]) ? htmlspecialchars($_COOKIE["userName"]) : ''; ?>">
 
             <?php if (isset($errName) && $errName == true): ?>
                 <p class="err">*</p><br>
@@ -102,7 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <br>
 
-        <input type="submit" name="confirm" value="Login">
+        <input type="submit" name="confirm" id="bLogin" value="Login">
     </form>
 
 
