@@ -1,0 +1,246 @@
+@import url("../assets/fonts/fonts.css");
+
+body {
+  display: flex;
+  flex-direction: column;
+
+  /*Makes the content fit the screen width*/
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  min-height: 100vh;
+
+  /*Centers the content*/
+  justify-content: space-between;
+  align-items: center;
+
+  position: relative;
+
+  font-family: "Poppins";
+}
+
+/*Element used to put the backgroud*/
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../assets/img/backgroud.jpg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: repeat;
+  opacity: 0.2;
+  filter: blur(5px);
+  z-index: -1;
+}
+
+header {
+  background-color: #0ccaba;
+  margin-bottom: 10px;
+  padding: 20px;
+  display: flex;
+  /*Centers the content*/
+  justify-content: space-between;
+  align-items: center;
+
+  height: 30%;
+  width: 98.7%;
+
+  /* Updated background */
+  background-image: linear-gradient(
+      135deg,
+      rgba(43, 110, 210, 0.15) 25%,
+      transparent 25%
+    ),
+    linear-gradient(225deg, rgba(43, 111, 210, 0.15) 25%, transparent 25%),
+    linear-gradient(45deg, rgba(43, 110, 210, 0.15) 25%, transparent 25%),
+    linear-gradient(
+      315deg,
+      rgba(43, 111, 210, 0.15) 25%,
+      rgba(246, 242, 255, 0.15) 25%
+    );
+  background-size: 91px 91px;
+  background-position: 45.5px 0px, 45.5px 0px, 0px 0px, 0px 0px;
+  background-repeat: repeat;
+}
+
+.logo {
+  /*Aligns the content*/
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  background-color: white;
+  padding: 10px;
+
+  border: 3px solid #0aa598;
+  border-radius: 20px;
+}
+
+.navProfile {
+  /*Aligns the content*/
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
+
+  margin-right: 40px;
+}
+
+/*Style of each line of options (buttons and user name)*/
+.optionContainer {
+  /*Centers the content*/
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.optionContainer img {
+  width: 50px;
+  height: 50px;
+}
+
+/*Style of the buttons*/
+.optionContainer button {
+  border: 2px solid black;
+  border-radius: 20px;
+
+  padding: 20px;
+
+  font-size: medium;
+}
+
+#bHome {
+  background-color: #98d9fc;
+}
+
+#bHome:hover {
+  background-color: #77a9c4;
+}
+
+#bCloSess {
+  background-color: #fa9b9f;
+}
+
+#bCloSess:hover {
+  background-color: #bb7174;
+}
+
+/*Nav size in the page*/
+.nav {
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.info {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 30px;
+  margin: 20px;
+}
+
+.fform {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 30px;
+
+  /*Aligns the content*/
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+
+.inputContainer {
+  width: 100%;
+  margin: 20px;
+  font-size: larger;
+
+  /*Aligns the content*/
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  gap: 10px;
+}
+
+#problemInput {
+  padding: 5px;
+  font-size: medium;
+}
+
+#proDescInput {
+  flex: 2;
+  height: 100px;
+  margin: 10px;
+}
+
+.result {
+  width: 100%;
+
+  /*Aligns the content*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.opt {
+  width: 100%;
+
+  /*Aligns the content*/
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+/*Style of the buttons*/
+.opt input {
+  border: 2px solid black;
+  border-radius: 20px;
+
+  padding: 20px;
+  margin: 10px;
+
+  width: 200px;
+
+  font-size: medium;
+}
+
+#bSend {
+  background-color: #a5f3be;
+}
+#bSend:hover {
+  background-color: #91d6a7;
+}
+
+#bClear {
+  background-color: #fa9b9f;
+}
+#bClear:hover {
+  background-color: #bb7174;
+}
+
+footer {
+  background-color: #95d0b8;
+  padding: 20px;
+  margin-top: 10px;
+
+  width: 100%;
+}

@@ -25,6 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (empty($_POST["name"])  || empty($_POST["password"])) {
         $errInputs = true;
+
         if (empty($_POST["name"])) {
             $errName = true;
         } else {

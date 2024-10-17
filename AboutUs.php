@@ -1,4 +1,5 @@
 <?php
+//List with the accepted users
 include("./assets/dataFolder/data.php");
 
 session_start();
@@ -24,12 +25,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: Login.php?redirected=true");
     } elseif (isset($_POST["home"])) {
         header("Location: Home.php");
+    } elseif (isset($_POST["toProducts"]) || isset($_POST["buy"])) {
+        header("Location: Products.php");
     } elseif (isset($_POST["toAboutUs"])) {
         header("Location: AboutUs.php");
     } elseif (isset($_POST["toFeedback"])) {
         header("Location: Feedback.php");
     }
 }
+
 
 ?>
 
@@ -39,26 +43,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products page</title>
-    <link rel="stylesheet" href="./styles/productStyle.css">
+    <title>About us page</title>
+    <link rel="stylesheet" href="./styles/aboutUsStyle.css">
 </head>
 
 <body>
     <header>
         <div class="logo">
             <img src="./assets/img/logoPhp.png" alt="Web page logo">
-            <h1>Products</h1>
+            <h1>About us</h1>
         </div>
+
         <div class="navProfile">
             <div class="optionContainer">
                 <h3><?php echo $_SESSION["user"] ?></h3>
                 <img src="./assets/icons/user.png" alt="User icon">
             </div>
+
             <form class="optionContainer" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
                 <button name="close" id="bCloSess">Close Session</button>
                 <button name="home" id="bHome">Home</button>
             </form>
-
         </div>
     </header>
 
@@ -67,34 +72,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         include("./assets/reusable/navigationBar.php");
         ?>
     </div>
-
-    <form class="searchBar">
-        <div class="var">
-            <span>Search by name: </span>
-            <input type="text" name="varName" id="varName" placeholder="Product name">
-        </div>
-        <div class="var">
-            <span>Category: </span>
-            <select name="category" id="varCat">
-                <option value="choose">Choose</option>
-            </select>
-        </div>
-
-        <div class="var">
-            <input type="button" id="bClear" value="Clear filters">
-        </div>
-    </form>
-
     <div class="content">
-        <?php
-        include("./assets/reusable/productCard.php");
-        include("./assets/reusable/productCard.php");
-        include("./assets/reusable/productCard.php");
-        include("./assets/reusable/productCard.php");
-        include("./assets/reusable/productCard.php");
-        include("./assets/reusable/productCard.php");
-        ?>
+        <div class="info">
+            <h2>Information about us</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus magni cum reprehenderit optio. Numquam eum commodi velit voluptatum nemo quos nostrum dolor cumque asperiores beatae? Quos impedit exercitationem aut aliquid.</p>
+        </div>
+        <div class="faq">
+            <h2>Frequent asked questions</h2>
+            <ul>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores unde doloremque atque soluta nihil iusto sequi voluptatum fugiat corrupti ipsam, id nam alias, eos velit odit sit. Consequuntur, qui a.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores unde doloremque atque soluta nihil iusto sequi voluptatum fugiat corrupti ipsam, id nam alias, eos velit odit sit. Consequuntur, qui a.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores unde doloremque atque soluta nihil iusto sequi voluptatum fugiat corrupti ipsam, id nam alias, eos velit odit sit. Consequuntur, qui a.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores unde doloremque atque soluta nihil iusto sequi voluptatum fugiat corrupti ipsam, id nam alias, eos velit odit sit. Consequuntur, qui a.</li>
+            </ul>
+        </div>
     </div>
+
+
 
 
     <footer>

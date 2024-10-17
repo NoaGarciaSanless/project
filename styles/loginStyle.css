@@ -12,9 +12,8 @@ body {
   overflow-x: hidden;
 
   /*Centers the content*/
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-
 
   font-family: "Poppins";
 }
@@ -34,16 +33,22 @@ header {
   justify-content: center;
   align-items: center;
 
-
-   /* Updated background */
-   background-image: 
-   linear-gradient(135deg, rgba(43, 110, 210, 0.15) 25%, transparent 25%), 
-   linear-gradient(225deg, rgba(43, 111, 210, 0.15) 25%, transparent 25%), 
-   linear-gradient(45deg, rgba(43, 110, 210, 0.15) 25%, transparent 25%), 
-   linear-gradient(315deg, rgba(43, 111, 210, 0.15) 25%, rgba(246, 242, 255, 0.15) 25%);
- background-size: 91px 91px;
- background-position: 45.5px 0px, 45.5px 0px, 0px 0px, 0px 0px;
- background-repeat: repeat;
+  /* Updated background */
+  background-image: linear-gradient(
+      135deg,
+      rgba(43, 110, 210, 0.15) 25%,
+      transparent 25%
+    ),
+    linear-gradient(225deg, rgba(43, 111, 210, 0.15) 25%, transparent 25%),
+    linear-gradient(45deg, rgba(43, 110, 210, 0.15) 25%, transparent 25%),
+    linear-gradient(
+      315deg,
+      rgba(43, 111, 210, 0.15) 25%,
+      rgba(246, 242, 255, 0.15) 25%
+    );
+  background-size: 91px 91px;
+  background-position: 45.5px 0px, 45.5px 0px, 0px 0px, 0px 0px;
+  background-repeat: repeat;
 }
 
 form {
@@ -78,7 +83,7 @@ form {
   flex: 1;
 }
 
-#bLogin{
+#bLogin {
   font-size: large;
   padding-left: 20px;
   padding-right: 20px;
@@ -89,8 +94,8 @@ form {
   border-radius: 20px;
 }
 
-#bLogin:hover{
-  background-color:#77a9c4;
+#bLogin:hover {
+  background-color: #77a9c4;
 }
 
 footer {

@@ -6,8 +6,8 @@ $user_list = array (
     'name' => 'Paquito',
     'password' => '123passPepe',
     'email' => 'uncorreo@correo.com',
-    'adress' => '',
-    'phone' => '',
+    'adress' => 'Rua Galicia',
+    'phone' => '345678912',
   ),
   1 => 
   array (

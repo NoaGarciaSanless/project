@@ -27,6 +27,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: Profile.php");
     } elseif (isset($_POST["toProducts"]) || isset($_POST["buy"])) {
         header("Location: Products.php");
+    } elseif (isset($_POST["toAboutUs"])) {
+        header("Location: AboutUs.php");
+    } elseif (isset($_POST["toFeedback"])) {
+        header("Location: Feedback.php");
     }
 }
 
