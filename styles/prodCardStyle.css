@@ -20,8 +20,9 @@ body{
   justify-content: space-between;
   align-items: start;
 
-  min-width: 500px;
+  min-width: 300px;
   max-width: 500px;
+  width: 100%;
 }
 
 .cardHeader {
@@ -38,8 +39,9 @@ body{
 #description {
   border: 2px solid rgb(189, 189, 189);
   border-radius: 5px;
-  margin: 50px;
-  padding: 30px;
+  margin: 20px;
+  padding: 20px;
+  width: auto;
 }
 
 form {
@@ -63,4 +65,57 @@ form {
 
 #bToProduct:hover {
   background-color: #77a9c4;
+}
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    min-width: auto;
+    padding: 10px;
+    margin: 10px 0;
+  }
+
+  .cardHeader {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  #description {
+    margin: 15px;
+    padding: 15px;
+    font-size: medium;
+  }
+
+  form {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #bToProduct {
+    font-size: medium;
+    padding: 15px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 5px;
+    border-width: 1px;
+    border-radius: 15px;
+  }
+
+  #description {
+    margin: 10px;
+    padding: 10px;
+    font-size: small;
+  }
+
+  #bToProduct {
+    font-size: small;
+    padding: 10px;
+  }
 }

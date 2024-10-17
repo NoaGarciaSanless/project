@@ -1,25 +1,6 @@
 @import url("../assets/fonts/fonts.css");
+@import url("./generalStyle.css");
 
-body {
-  display: flex;
-  flex-direction: column;
-
-  /*Makes the content fit the screen width*/
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  overflow-x: hidden;
-  min-height: 100vh;
-
-  /*Centers the content*/
-  justify-content: space-between;
-  align-items: center;
-
-  position: relative;
-
-  font-family: "Poppins";
-}
 
 /*Element used to put the backgroud*/
 body::before {
@@ -50,7 +31,6 @@ header {
   height: 30%;
   width: 98.7%;
 
-
   /* Updated background */
   background-image: 
     linear-gradient(135deg, rgba(43, 110, 210, 0.15) 25%, transparent 25%), 
@@ -62,57 +42,6 @@ header {
   background-repeat: repeat;
 }
 
-.logo {
-  /*Aligns the content*/
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
-
-.logo img {
-  background-color: white;
-  padding: 10px;
-
-  border: 3px solid #0aa598;
-  border-radius: 20px;
-}
-
-.navProfile {
-  /*Aligns the content*/
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  align-items: end;
-
-  margin-right: 40px;
-}
-
-/*Style of each line of options (buttons and user name)*/
-.optionContainer {
-  /*Centers the content*/
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-}
-
-.optionContainer img {
-  width: 50px;
-  height: 50px;
-}
-
-/*Style of the buttons*/
-.optionContainer button {
-  border: 2px solid black;
-  border-radius: 20px;
-
-  padding: 20px;
-
-  font-size: medium;
-}
 
 #bHome {
   background-color: #98d9fc;
@@ -130,8 +59,15 @@ header {
   background-color: #bb7174;
 }
 
-/*Nav size in the page*/
+/* Nav size in the page */
 .nav {
+  display: flex;
+  flex-direction: row;
+
+  /*Centers the content*/
+  justify-content: center;
+  align-items: center;
+  
   width: 60%;
   margin-left: 20%;
   margin-right: 20%;
@@ -141,16 +77,18 @@ header {
   background-color: white;
   border: 1px solid black;
   border-radius: 20px;
-  width: 50%;
-  margin: 20px;
-  margin-top: 30px;
-  padding: 20px;
+  width: 100%;
+  max-width: 600px;
+
+  margin: 20px auto;
+  padding: 15px;
 
   /*Centers the content*/
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  gap: 5px;
 
   font-size: larger;
 }
@@ -189,7 +127,9 @@ header {
 }
 
 .content {
-  margin: 30px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 30px auto;
 
   /*Centers the content*/
   display: flex;
@@ -199,10 +139,44 @@ header {
   flex-wrap: wrap;
 }
 
-footer {
-  background-color: #95d0b8;
-  padding: 20px;
-  margin-top: 10px;
 
-  width: 100%;
+/* Responsiveness */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav {
+    flex-direction: column;
+    width: 100%;
+  }
+ 
+  .searchBar {
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .var {
+    flex-direction: column;
+    align-items: center;
+  }
 }
+
+@media (max-width: 480px) {
+  .searchBar {
+    width: 100%;
+    font-size: medium;
+  }
+
+  #bHome, #bCloSess {
+    padding: 10px;
+    font-size: small;
+  }
+}
+

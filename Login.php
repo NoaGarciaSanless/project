@@ -23,33 +23,39 @@ function checkUser($name, $pass, $list)
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    if (empty($_POST["name"])  || empty($_POST["password"])) {
+    if (empty($_POST["name"])) {
         $errInputs = true;
-
-        if (empty($_POST["name"])) {
-            $errName = true;
-        } else {
-            setcookie("userName", $_POST["name"], time() + 3600);
-        }
-        if (empty($_POST["password"])) {
-            $errPass = true;
-        }
+        $errName = true;
+        $userName = '';
     } else {
+        setcookie("userName", $_POST["name"], time() + 3600);
         $userName = test_input($_POST["name"]);
-        $userPass = test_input($_POST["password"]);
+    }
 
+    if (empty($_POST["password"])) {
+        $errInputs = true;
+        $errPass = true;
+
+    } else {
+        $userPass = test_input($_POST["password"]);
+    }
+
+    if (isset($userName) && isset($userPass)) {
         //Checks if the user is valid
         $user = checkUser($userName, $userPass, $user_list);
 
         if ($user == false) {
             $err = true;
             $user = "none";
+            $userName = $_POST["name"];
         } else {
             session_start();
             $_SESSION['user'] = $user;
             header("Location: Home.php");
         }
     }
+
+
 }
 
 ?>
@@ -69,24 +75,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h1>Login</h1>
     </header>
 
-    <?php
-    if (isset($err) && $err == true) {
-        echo '<p class="err"> The user or the password are wrong, please introduce a valid login to continue</p>';
-    }
 
-    if (isset($errInputs) && $errInputs == true) {
-        echo '<p class="err"> You need to specify a user and a password to login</p>';
-    }
-
-
-    if (isset($_GET["redirected"]) && $_GET["redirected"] == true) {
-        echo '<p> You have logged out!</p>';
-    }
-    ?>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
+        <?php
+        if (isset($err) && $err == true) {
+            echo '<p class="err"> The user or the password are wrong, please introduce a valid login to continue</p>';
+        }
+
+        if (isset($errInputs) && $errInputs == true) {
+            echo '<p class="err"> You need to specify a user and a password to login</p>';
+        }
+
+
+        if (isset($_GET["redirected"]) && $_GET["redirected"] == true) {
+            echo '<p> You have logged out!</p>';
+        }
+        ?>
+
         <div class="field">
             User name:
-            <input type="text" name="name" value="<?php echo isset($_COOKIE["userName"]) ? htmlspecialchars($_COOKIE["userName"]) : ''; ?>">
+            <input type="text" name="name"
+                value="<?php echo isset($_COOKIE["userName"]) ? htmlspecialchars($_COOKIE["userName"]) : ''; ?>">
 
             <?php if (isset($errName) && $errName == true): ?>
                 <p class="err">*</p><br>

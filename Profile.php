@@ -193,7 +193,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 
     <?php if (!$showForm): ?>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
+            <form class="buttonEdit" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
             <button name="edit" id="bEdit">Edit profile</button>
         </form>
     <?php endif; ?>

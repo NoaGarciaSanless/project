@@ -1,28 +1,8 @@
+/* Imports the fonts and a general style */
 @import url("../assets/fonts/fonts.css");
+@import url("./generalStyle.css");
 
-body {
-  display: flex;
-  flex-direction: column;
-
-  /*Makes the content fit the screen width*/
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  overflow-x: hidden;
-  min-height: 100vh;
-
-  /*Centers the content*/
-  justify-content: space-between;
-  align-items: center;
-
-  position: relative;
-
-
-  font-family: "Poppins";
-}
-
-/*Element used to put the backgroud*/
+/* Element used to put the background */
 body::before {
   content: "";
   position: absolute;
@@ -44,14 +24,10 @@ header {
   margin-bottom: 10px;
   padding: 20px;
   display: flex;
-  /*Centers the content*/
   justify-content: space-between;
   align-items: center;
-
   height: 30%;
   width: 98.7%;
-
-  /* Updated background */
   background-image: 
     linear-gradient(135deg, rgba(43, 110, 210, 0.15) 25%, transparent 25%), 
     linear-gradient(225deg, rgba(43, 111, 210, 0.15) 25%, transparent 25%), 
@@ -62,57 +38,7 @@ header {
   background-repeat: repeat;
 }
 
-.logo {
-  /*Aligns the content*/
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
 
-.logo img {
-  background-color: white;
-  padding: 10px;
-
-  border: 3px solid #0aa598;
-  border-radius: 20px;
-}
-
-.navProfile {
-  /*Aligns the content*/
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  align-items: end;
-
-  margin-right: 40px;
-}
-
-/*Style of each line of options (buttons and user name)*/
-.optionContainer {
-  /*Centers the content*/
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-}
-
-.optionContainer img {
-  width: 50px;
-  height: 50px;
-}
-
-/*Style of the buttons*/
-.optionContainer button {
-  border: 2px solid black;
-  border-radius: 20px;
-
-  padding: 20px;
-
-  font-size: medium;
-}
 
 #bProfile {
   background-color: #98d9fc;
@@ -130,8 +56,15 @@ header {
   background-color: #bb7174;
 }
 
-/*Nav size in the page*/
+/* Nav size in the page */
 .nav {
+  display: flex;
+  flex-direction: row;
+
+  /*Centers the content*/
+  justify-content: center;
+  align-items: center;
+  
   width: 60%;
   margin-left: 20%;
   margin-right: 20%;
@@ -139,8 +72,6 @@ header {
 
 .content {
   margin: 30px;
-
-  /*Centers the content*/
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -148,10 +79,89 @@ header {
   flex-wrap: wrap;
 }
 
-footer {
-  background-color: #95d0b8;
-  padding: 20px;
-  margin-top: 10px;
 
-  width: 100%;
+/* Rewrites the responsive design */
+@media (max-width: 1024px) {
+  .nav {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .optionContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .optionContainer img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .optionContainer button {
+    padding: 15px;
+    font-size: small;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+    padding: 15px;
+  }
+
+  .nav {
+    width: 100%;
+    margin: 0;
+  }
+
+  .navProfile {
+    margin-right: 0;
+  }
+
+  .optionContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content {
+    flex-direction: column;
+    margin: 20px;
+  }
+
+  footer {
+    font-size: small;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 10px;
+  }
+
+  .optionContainer img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .optionContainer button {
+    padding: 10px;
+    font-size: small;
+  }
+
+  .content {
+    margin: 10px;
+  }
+
+  footer {
+    font-size: x-small;
+  }
 }

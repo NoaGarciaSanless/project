@@ -1,21 +1,25 @@
 @import url("../assets/fonts/fonts.css");
 
-body{
+body {
   font-family: "Poppins";
 }
 
 .navigationBar {
   background-color: white;
+  border: 2px solid black;
+  border-radius: 20px;
+
+  width: 100%;
+  padding: 10px;
 
   display: flex;
   flex-direction: row;
 
-  border: 2px solid black;
-  border-radius: 20px;
-
   /*Centers the content*/
   justify-content: center;
   align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .navigationBar button {
@@ -61,8 +65,48 @@ body{
 
 #toFeedback {
   background-color: #f5c57d;
-}
+} 
 
 #toFeedback:hover {
   background-color: #ecbb71;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .navigationBar {
+    flex-direction: column;
+    padding: 5px;
+  }
+
+  .bNav {
+    width: 100%;
+    margin: 5px 0;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .navigationBar button {
+    font-size: medium;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navigationBar {
+    border-width: 1px;
+    border-radius: 15px;
+    padding: 5px;
+    gap: 5px;
+  }
+
+  .bNav {
+    border-width: 1px;
+    border-radius: 20px;
+    padding: 5px;
+  }
+
+  .navigationBar button {
+    font-size: small;
+    padding: 6px;
+  }
 }

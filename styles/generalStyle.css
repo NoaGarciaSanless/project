@@ -1,0 +1,164 @@
+body {
+  display: flex;
+  flex-direction: column;
+
+  /*Makes the content fit the screen width*/
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  min-height: 100vh;
+
+  /*Centers the content*/
+  justify-content: space-between;
+  align-items: center;
+
+  position: relative;
+
+  font-family: "Poppins";
+}
+
+.err {
+  color: red;
+}
+
+header {
+  background-color: #0ccaba;
+  margin-bottom: 10px;
+  padding: 20px;
+  display: flex;
+  /*Centers the content*/
+  justify-content: center;
+  align-items: center;
+
+  height: 30%;
+  width: 98.7%;
+
+  /* Updated background */
+  background-image: linear-gradient(
+      135deg,
+      rgba(43, 110, 210, 0.15) 25%,
+      transparent 25%
+    ),
+    linear-gradient(225deg, rgba(43, 111, 210, 0.15) 25%, transparent 25%),
+    linear-gradient(45deg, rgba(43, 110, 210, 0.15) 25%, transparent 25%),
+    linear-gradient(
+      315deg,
+      rgba(43, 111, 210, 0.15) 25%,
+      rgba(246, 242, 255, 0.15) 25%
+    );
+  background-size: 91px 91px;
+  background-position: 45.5px 0px, 45.5px 0px, 0px 0px, 0px 0px;
+  background-repeat: repeat;
+}
+
+.navProfile {
+  /*Aligns the content*/
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
+
+  margin-right: 40px;
+}
+
+.logo {
+  /*Aligns the content*/
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  background-color: white;
+  padding: 10px;
+
+  border: 3px solid #0aa598;
+  border-radius: 20px;
+}
+
+
+/* Style of each line of options (buttons and user name) */
+.optionContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.optionContainer img {
+  width: 50px;
+  height: 50px;
+}
+
+/* Style of the buttons */
+.optionContainer button {
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 20px;
+  font-size: medium;
+}
+
+footer {
+  background-color: #95d0b8;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+  margin-top: 10px;
+
+  width: 100%;
+}
+
+
+/* For the responsive desing */
+@media (max-width: 768px) {
+    header {
+      padding: 15px;
+    }
+  
+    form {
+      width: 90%;
+      max-width: 350px;
+      padding: 20px;
+    }
+  
+    .field {
+      flex-direction: column;
+      justify-content: center;
+    }
+  
+    #bLogin {
+      width: 100%;
+      font-size: medium;
+      padding: 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    header {
+      padding: 10px;
+      text-align: center;
+    }
+  
+    form {
+      width: 95%;
+      padding: 15px;
+    }
+  
+    .field {
+      font-size: medium;
+    }
+  
+    footer {
+      font-size: small;
+      bottom: 0;
+    }
+  }
+  

@@ -1,27 +1,7 @@
 @import url("../assets/fonts/fonts.css");
+@import url("./generalStyle.css");
 
-body {
-  display: flex;
-  flex-direction: column;
-
-  /*Makes the content fit the screen width*/
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  overflow-x: hidden;
-  min-height: 100vh;
-
-  /*Centers the content*/
-  justify-content: space-between;
-  align-items: center;
-
-  position: relative;
-
-  font-family: "Poppins";
-}
-
-/*Element used to put the backgroud*/
+/* Element used to put the background */
 body::before {
   content: "";
   position: absolute;
@@ -30,12 +10,19 @@ body::before {
   right: 0;
   bottom: 0;
   background-image: url("../assets/img/backgroud.jpg");
-  background-size: contain;
+  background-size: cover;
   background-position: center;
-  background-repeat: repeat;
+  background-repeat: no-repeat;
   opacity: 0.2;
   filter: blur(5px);
   z-index: -1;
+}
+
+/*Adjustments for the body*/
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins";
 }
 
 header {
@@ -46,11 +33,9 @@ header {
   /*Centers the content*/
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 
-  height: 30%;
-  width: 98.7%;
-
-  /* Updated background */
+  width: 100%;
   background-image: linear-gradient(
       135deg,
       rgba(43, 110, 210, 0.15) 25%,
@@ -68,87 +53,42 @@ header {
   background-repeat: repeat;
 }
 
-.logo {
-  /*Aligns the content*/
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
-
-.logo img {
-  background-color: white;
-  padding: 10px;
-
-  border: 3px solid #0aa598;
-  border-radius: 20px;
-}
-
-.navProfile {
-  /*Aligns the content*/
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  align-items: end;
-
-  margin-right: 40px;
-}
-
-/*Style of each line of options (buttons and user name)*/
-.optionContainer {
-  /*Centers the content*/
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-}
-
-.optionContainer img {
-  width: 50px;
-  height: 50px;
-}
-
-/*Style of the buttons*/
-.optionContainer button {
-  border: 2px solid black;
-  border-radius: 20px;
-
-  padding: 20px;
-
-  font-size: medium;
-}
-
+/* Buttons styling */
 #bHome {
   background-color: #98d9fc;
 }
-
 #bHome:hover {
   background-color: #77a9c4;
 }
-
 #bCloSess {
   background-color: #fa9b9f;
 }
-
 #bCloSess:hover {
   background-color: #bb7174;
 }
 
-/*Nav size in the page*/
 .nav {
-  width: 60%;
-  margin-left: 20%;
-  margin-right: 20%;
+  display: flex;
+  flex-direction: row;
+  /*Centers the content*/
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
 }
 
+.content{
+  margin: 10px;
+}
+
+/* Form and input styling */
 .info {
   background-color: white;
   border: 1px solid black;
   border-radius: 20px;
   padding: 30px;
   margin: 20px;
+  flex: 1 1 300px;
 }
 
 .fform {
@@ -156,42 +96,27 @@ header {
   border: 1px solid black;
   border-radius: 20px;
   padding: 30px;
-
-  /*Aligns the content*/
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: start;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .inputContainer {
   width: 100%;
-  margin: 20px;
+  margin: 20px 0;
   font-size: larger;
-
-  /*Aligns the content*/
   display: flex;
-  flex-direction: row;
-  justify-content: start;
-  align-items: start;
-  gap: 10px;
+  flex-direction: column;
 }
 
-#problemInput {
+#problemInput, #proDescInput {
+  width: 100%;
   padding: 5px;
   font-size: medium;
 }
 
-#proDescInput {
-  flex: 2;
-  height: 100px;
-  margin: 10px;
-}
-
-.result {
+.result, .opt {
   width: 100%;
-
-  /*Aligns the content*/
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -199,27 +124,21 @@ header {
   gap: 10px;
 }
 
-.opt {
-  width: 100%;
-
-  /*Aligns the content*/
+.opt{
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 10px;
 }
 
-/*Style of the buttons*/
+/* Style of the buttons */
 .opt input {
   border: 2px solid black;
   border-radius: 20px;
-
-  padding: 20px;
+  padding: 10px;
   margin: 10px;
-
-  width: 200px;
-
+  width: 100%;
+  max-width: 200px;
   font-size: medium;
 }
 
@@ -237,10 +156,47 @@ header {
   background-color: #bb7174;
 }
 
-footer {
-  background-color: #95d0b8;
-  padding: 20px;
-  margin-top: 10px;
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
 
-  width: 100%;
+  .nav {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+  }
+
+  .info, .fform {
+    width: 90%;
+    margin: 20px auto;
+  }
+
+  .opt input {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .inputContainer {
+    flex-direction: column;
+  }
+
+  .nav, .info, .fform {
+    width: 95%;
+    margin: 10px auto;
+  }
+
+  .opt input {
+    width: 100%;
+  }
 }
